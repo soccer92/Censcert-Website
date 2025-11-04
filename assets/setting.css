@@ -319,6 +319,10 @@ main > section.tom > .column.right > .tabContent {
     border: 1px solid var(--colour-seven);
     border-top: none;
 }
+
+main > section.hag > .column.left > .powr-form-builder {
+    width: 100%;
+}
 /* Section Conclude */
 
 /* Footer */
