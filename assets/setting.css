@@ -1,0 +1,454 @@
+/* Copyright (c) Censcert 2025. All rights reserved. */
+:root {
+    --colour-one: #f5f5f5;
+    --colour-two: #215f9a;
+    --colour-three: #ffd579;
+    --colour-four: #000;
+    --colour-five: #fff;
+    --colour-six: #d70040;
+    --colour-seven: #ccc;
+    --colour-eight: #eee;
+    --master-font: "Open Sans", sans-serif;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --year: "2024-2025";
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--master-font);
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    background: var(--colour-one);
+    align-items: flex-end;
+    border-bottom: 8px solid var(--colour-three);
+    box-shadow: var(--box-shadow);
+    padding: 0 8px;
+    z-index: 1;
+}
+
+nav > .logo {
+    font-size: 14pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--colour-two);
+}
+
+nav > .spacer {
+    flex: 1;
+}
+
+nav > a {
+    font-size: 10pt;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--colour-four);
+    border-bottom: 8px solid transparent;
+    margin-bottom: -8px;
+}
+
+nav > a.hamburger {
+    display: none; /* Hidden for larger screens. */
+}
+
+nav > a:not(.logo):not(.social):not(.active):not(.hamburger):hover {
+    border-bottom: 8px solid var(--colour-two);
+}
+
+nav > a.active {
+    border-bottom: 8px solid var(--colour-five);
+}
+
+nav > a > img {
+    height: 16px;
+    width: 16px;
+    display: block;
+}
+/* Navigation Bar Conclude */
+
+/* Main Content */
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+/* Main Content Conclude */
+
+/* Section */
+main > section {
+    display: flex;
+    flex-direction: row;
+}
+
+main > section > .column {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    align-items: flex-start;
+}
+
+main > section.hero,
+main > section.header {
+    background: var(--colour-two);
+}
+
+main > section.hero > .column.left {
+    width: 60%;
+    justify-content: center;
+}
+
+main > section.header > .column.left {
+    width: 80%;
+    justify-content: center;
+}
+
+main > section.hero > .column.left > .title,
+main > section.header > .column.left > .title {
+    font-size: 22pt;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 2.0;
+    color: var(--colour-five);
+}
+
+main > section.hero > .column.left > .subtitle,
+main > section.header > .column.left > .subtitle {
+    font-size: 14pt;
+    font-weight: 400;
+    margin-bottom: 16px;
+    line-height: 2.0;
+    text-transform: uppercase;
+    color: var(--colour-three);
+}
+
+main > section.hero > .column.right {
+    width: 40%;
+    /* Background Image sourced under licence from Shutterstock. */
+    background-image: url(../assets/images/Coochiemudlo.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main > section.header > .column.right {
+    width: 20%;
+    background-image: url(../assets/images/Tom-Carpenter.JPG);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main > section.servicesProducts > .column.left,
+main > section.servicesProducts > .column.right, 
+main > section.products > .column.left,
+main > section.products > .column.right,
+main > section.tom > .column.left,
+main > section.tom > .column.right,
+main > section.hag > .column.left,
+main > section.hag > .column.right {
+    width: 50%;
+}
+
+main > section.servicesProducts > .column > h2,
+main > section.services > .column > h2,
+main > section.products > .column > h2, 
+main > section.contact > .column > h2,
+main > section.blog > .column > h2,
+main > section.featuredProject > .column.right > h1,
+main > section.tom > .column > h2,
+main > section.hag > .column > h2 {
+    color: var(--colour-two);
+}
+
+main > section.servicesProducts > .column > ul > li, 
+main > section.featuredProject > .column.right > p, 
+main > section.services > .column > p, 
+main > section.services > .column > ul > li,
+main > section.products > .column > p,
+main > section.products > .column > ul > li, 
+main > section.contact > .column > p,
+main > section.contact > .column > ul > li,
+main > section.blog > .column > p,
+main > section.blog > .column > .tabContent > ul > li,
+main > section.tom > .column > p,
+main > section.tom > .column > .tabContent > ul > li,
+main > section.hag > .column > p,
+main > section.privacyTerms > .column > p {
+    font-size: 10pt;
+    line-height: 2.0;
+    margin-bottom: 8px;
+    color: var(--colour-four);
+}
+
+main > section.servicesProducts > .column > ul > li > .indicator {
+    font-weight: 700;
+    color: var(--colour-six);
+    font-style: italic;
+}
+
+main > section.servicesProducts > .column > .button,
+main > section.products > .column > .button,
+main > section.hag > .column > .button {
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    border: 2px solid var(--colour-three);
+    text-decoration: none;
+    color: var(--colour-four);
+    font-size: 10pt;
+}
+
+main > section.servicesProducts > .column > .button:hover, 
+main > section.products > .column > .button:hover,
+main > section.hag > .column > .button:hover {
+    background: var(--colour-three);
+    color: var(--colour-five);
+}
+
+main > section.featuredProject {
+    background: var(--colour-one);
+}
+
+main > section.featuredProject > .column.left {
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+}
+
+main > section.featuredProject > .column.left > img {
+    width: 100%;
+    height: auto;
+}
+
+main > section.featuredProject > .column.right {
+    width: 60%;
+}
+
+main > section.featuredProject > .column.right > p > a,
+main > section.contact > .column > ul > li > a,
+main > section.blog > .column > .tabContent > ul > li > a,
+main > section.tom > .column > p > a,
+main > section.tom > .column > .tabContent > ul > li > a {
+    color: var(--colour-two);
+    text-decoration: underline;
+}
+
+main > section.quote, 
+main > section.services, 
+main > section.servicesProducts,
+main > section.products,
+main > section.contact,
+main > section.blog,
+main > section.tom,
+main > section.hag,
+main > section.privacyTerms {
+    background: var(--colour-five);
+}
+
+main > section.quote > .column, 
+main > section.services > .column,
+main > section.contact > .column,
+main > section.blog > .column {
+    width: 100%;
+}
+
+main > section.quote > .column {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main > section.quote > .column > p {
+    font-size: 14pt;
+    margin-bottom: 8px;
+    line-height: 2.0;
+    color: var(--colour-four);
+}
+
+main > section.blog > .column > .tabs,
+main > section.tom > .column.right > .tabs {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--colour-seven);
+    background: var(--colour-one);
+}
+
+main > section.blog > .column > .tabs > button,
+main > section.tom > .column.right > .tabs > button {
+    background: inherit;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 10pt;
+    color: var(--colour-four);
+}
+
+main > section.blog > .column > .tabs > button.active,
+main > section.tom > .column.right > .tabs > button.active {
+    background: var(--colour-seven);
+    color: var(--colour-two);
+    font-weight: 700;
+}
+
+main > section.blog > .column > .tabs > button:not(.active):hover,
+main > section.tom > .column.right > .tabs > button:not(.active):hover {
+    background: var(--colour-eight);
+}
+
+main > section.blog > .column > .tabContent,
+main > section.tom > .column.right > .tabContent {
+    display: none;
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--colour-seven);
+    border-top: none;
+}
+/* Section Conclude */
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: row;
+    background: var(--colour-one);
+    border-top: 8px solid var(--colour-three);
+    box-shadow: var(--box-shadow);
+    padding: 0 8px;
+}
+
+footer > .column {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    align-items: flex-start;
+}
+
+footer > .column.left,
+footer > .column.middle {
+    width: 20%;
+}
+
+footer > .column.right {
+    width: 60%;
+}
+
+footer > .column.right > img {
+    height: 80px;
+    width: auto;
+    margin-bottom: 8px;
+    filter: grayscale(60%);
+}
+
+footer > .column > p,
+footer > .column > a {
+    font-size: 10pt;
+    margin: 8px 0;
+    line-height: 2.0;
+}
+
+footer > .column > p > a,
+footer > .column > a {
+    color: var(--colour-two);
+    text-decoration: underline;
+}
+
+footer > .column > p > .year::before {
+    content: var(--year);
+}
+/* Footer Conclude */
+
+/* Media Queries */
+@media (max-width: 780px) {
+    /* Navigation Bar Adjustments */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 4px 0;
+    }
+    
+    nav > .spacer { 
+        display: none; 
+    }
+    
+    nav > a.logo,
+    nav > a.social,
+    nav > a.hamburger {
+        order: 1;
+        display: inline-flex;
+        align-items: center;
+        vertical-align: middle;
+    }
+    
+    nav > a.logo { 
+        margin-right: auto; 
+    }
+
+    nav > a:not(.logo):not(.social):not(.hamburger) {
+        order: 2;
+        display: none;
+        flex-basis: 100%;
+        text-align: left;
+    }
+
+    nav.responsive > a:not(.logo):not(.social):not(.hamburger) {
+        display: block;
+        padding: 12px;
+    }
+
+    nav.responsive > a.active {
+        background: var(--colour-five);
+        color: var(--colour-four);
+    }
+
+    nav.responsive > a:not(.logo):not(.social):not(.active):not(.hamburger):hover {
+        background: var(--colour-two);
+        color: var(--colour-five);
+    }
+
+    nav > a,
+    nav > a.active,
+    nav > a:hover {
+        border-bottom: none !important;
+        margin-bottom: 0;
+    }
+
+    /* Section Adjustments */
+    main > section {
+        flex-direction: column;
+    }
+
+    main > section > .column {
+        width: 100% !important;
+    }
+
+    main > section.hero > .column.right,
+    main > section.header > .column.right {
+        height: 300px;
+    }
+
+    /* Footer Adjustments */
+    footer {
+        flex-direction: column;
+    }
+
+    footer > .column {
+        width: 100% !important;
+    }
+}
+/* Media Queries Conclude */
